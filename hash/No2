@@ -1,0 +1,20 @@
+#include <string>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+bool solution(vector<string> phone_book) {
+    bool answer = true;
+    sort(phone_book.begin(), phone_book.end());
+    
+    //반복문을 통해 비교를 진행
+    for(int i=0;i<phone_book.size()-1;i++){
+         //두 번째 비교 대상을 첫 번째 비교 대상의 길이만큼 자른 뒤 그 값이 같을 경우 
+         if(phone_book[i]==phone_book[i+1].substr(0, phone_book[i].size())){
+             answer=false;
+             return answer;    
+         }
+    }
+    return answer;
+}
