@@ -6,12 +6,10 @@ using namespace std;
 
 string solution(vector<string> participant, vector<string> completion) {
     string answer = "";
-    sort(participant.begin(), participant.end()); //정렬을 해서 참가자 벡터와 완주자 벡터의 요소들의 순서를 같게 만들어줌
+    sort(participant.begin(), participant.end());
     sort(completion.begin(), completion.end());
     
-    //참가자와 완주자의 벡터의 요소를 비교하는 반복문 실행
     for(int i=0;i<=completion.size();i++){
-        //일치하지 않는 요소가 완주하지 못한 
         if(participant[i]!=completion[i]){
             return participant[i];
         }
